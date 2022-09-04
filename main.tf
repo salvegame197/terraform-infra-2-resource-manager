@@ -11,7 +11,7 @@ provider "oci" {
 }
 
 resource "oci_core_vcn" "internal" {
-  dns_label      = var.dns_label
+  # dns_label      = var.dns_label
   cidr_block     = var.cidr_block
   compartment_id = var.compartment_id
   display_name   = var.display_name

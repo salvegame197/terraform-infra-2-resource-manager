@@ -6,7 +6,7 @@
   #VCN
   variable "cidr_block" {}
   variable "display_name" {}
-  variable "dns_label" {}
+  # variable "dns_label" {}
 
   #Subnet
   variable "subnet_cidr_block" {}
