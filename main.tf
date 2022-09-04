@@ -28,6 +28,12 @@ resource "oci_core_instance" "testeInstance" {
     availability_domain = var.instance_availability_domain
     compartment_id = var.compartment_id
     shape = var.instance_shape
+    count = var.num_instances
+
+    shape_config {
+      ocpus = var.instance_shape_config_ocpus
+      memory_in_gbs = var.instance_shape_config_memory_in_gbs
+    }
 
     create_vnic_details {
         subnet_id = oci_core_subnet.test_subnet.id

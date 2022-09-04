@@ -30,6 +30,9 @@ variableGroups:
       - instance_availability_domain
       - instance_shape
       - image_id
+      - instance_shape_config_ocpus
+      - instance_shape_config_memory_in_gbs
+      - num_instances 
 
 
 variables:
@@ -103,4 +106,25 @@ variables:
     dependsOn:
       region: region
       compartmentId: compartment_id
+    default: 1
+  
+  instance_shape_config_ocpus:
+    type: number
+    title: "OCPUs"
+    description: "The number of OCPUs available to the instance."
+    required: true
+    default: 1
+
+  instance_shape_config_memory_in_gbs:
+    type: number
+    title: "Memory in GBs"
+    description: "The amount of memory available to the instance, in gigabytes."
+    required: true
+    default: 2
+
+  num_instances:
+    type: number
+    title: "Number of Instances"
+    description: "The number of instances to launch."
+    required: true
     default: 1
