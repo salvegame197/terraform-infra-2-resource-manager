@@ -83,17 +83,17 @@ variables:
     title: "Instance Shape"
     default: VM.Standard2.1
     dependsOn:
-      - region
-      - compartment_id
+      region: region
+      compartmentId: compartment_id
 
   image_id:
-    type: oci:cor:image:id
+    type: oci:core:image:id
     title: "Image"
     description: "The image used to launch the instance."
     required: true
     dependsOn:
-      - region
-      - compartment_id
+      region: region
+      compartmentId: compartment_id
 
   instance_availability_domain:
     type: oci:identity:availabilitydomain:name
@@ -101,6 +101,6 @@ variables:
     description: "The availability domain of the instance."
     required: true
     dependsOn:
-      - region
-      - compartment_id
+      region: region
+      compartmentId: compartment_id
     default: 1
