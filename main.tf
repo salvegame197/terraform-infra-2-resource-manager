@@ -30,6 +30,10 @@ resource "oci_core_instance" "testeInstance" {
     shape = var.instance_shape
     count = var.num_instances
 
+    metadata = {
+      ssh_authorized_keys = var.ssh_public_key
+    }
+
     shape_config {
       ocpus = var.instance_shape_config_ocpus
       memory_in_gbs = var.instance_shape_config_memory_in_gbs
